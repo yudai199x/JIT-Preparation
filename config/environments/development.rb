@@ -66,6 +66,8 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+  config.action_mailer.default_url_options = { host: 'https://ca7ddc274820441f969c08555f62e06e.vfs.cloud9.us-east-1.amazonaws.com' }
+  config.action_mailer.delivery_method = :letter_opener_web
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
