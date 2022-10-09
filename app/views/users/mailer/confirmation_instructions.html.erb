@@ -1,8 +1,8 @@
-<p>Welcome <%= @email %>!</p>
+<p><%= t('.greeting', recipient: @email) %></p>
 
-<p>You can confirm your account email through the link below:</p>
+<p><%= t('.instruction') %></p>
 
-<p><%= link_to 'Confirm my account', 
+<p><%= link_to t('.action'), 
                 controller: 'devise/confirmations',
                 action: 'create',
                 confirmation_token: @token %></p>

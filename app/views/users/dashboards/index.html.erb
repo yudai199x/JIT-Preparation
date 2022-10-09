@@ -1,5 +1,12 @@
-<h2>Dash Boards</h2>
-
-<%= current_user.name %><br />
-<%= link_to "edit", edit_user_registration_path %><br />
-<%= link_to "sign_out", destroy_user_session_path, method: :delete %><br />
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-3 text-center">
+      <h2>Dash Boards</h2>
+      <h3><%= current_user.name %></h3>
+      <div class="d-grid gap-2 col-8 mx-auto">
+        <%= link_to t('.edit'), edit_user_registration_path, class: 'btn btn-lg btn-primary' %>
+        <%= link_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'btn btn-lg btn-warning' %>
+      </div>
+    </div>
+  </div>
+</div>
