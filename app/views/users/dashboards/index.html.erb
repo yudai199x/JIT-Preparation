@@ -4,6 +4,7 @@
       <h2>Dash Boards</h2>
       <h3><%= current_user.name %></h3>
       <div class="d-grid gap-2 col-8 mx-auto">
+        <%= link_to "記事一覧", users_articles_path, class: 'btn btn-lg btn-primary' %>
         <%= link_to t('.edit'), edit_user_registration_path, class: 'btn btn-lg btn-primary' %>
         <%= link_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'btn btn-lg btn-warning' %>
       </div>
