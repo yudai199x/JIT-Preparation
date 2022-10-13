@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10 text-center">
+      <h2>記事一覧</h2>
+      <div class="col-5 mx-auto d-grid gap-2">
+        <%= link_to "記事新規作成", new_users_article_path, class: 'btn btn-primary' %>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>詳細表示</th>
+            <th>タイトル</th>
+            <th>内容</th>
+            <th>画像</th>
+            <th>編集・削除</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider align-middle">
+          <% @articles.each do |article| %>
+            <tr>
+              <td><%= link_to "詳細", users_article_path(article), class: 'btn btn-primary' %></td>
+              <td><%= article.title %></td>
+              <td><%= article.content %></td>
+              <td>
+                <% if article.image? %>
+                  <%= image_tag article.image.url, class: 'rounded-0', size: '100x100' %>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to "編集", edit_users_article_path(article), class: 'btn btn-success' %>
+                <%= link_to "削除", users_article_path(article), method: :delete,
+                data: { confirm: "「#{article.title}」を削除します。よろしいですか？" }, class: 'btn btn-danger' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= link_to "戻る", users_dashboards_index_path, class: 'float-start' %>
+    </div>
+  </div>
+</div>
